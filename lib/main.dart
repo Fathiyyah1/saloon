@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/global.dart';
+import 'package:saloon/screens/Settings.dart';
 import 'package:saloon/screens/homepage.dart';
 
 void main() {
@@ -36,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var screens = [homepage()];
+  var screens = [homepage(), Settings()];
 
   @override
   Widget build(BuildContext context) {
