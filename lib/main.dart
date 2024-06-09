@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/global.dart';
+import 'package:saloon/screens/Appointment.dart';
+import 'package:saloon/screens/Profile.dart';
 import 'package:saloon/screens/Settings.dart';
 import 'package:saloon/screens/homepage.dart';
 
@@ -37,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var screens = [homepage(), Settings()];
+  var screens = [homepage(), Appointment(), Profile(), Settings()];
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
         BottomNavigationBarItem(
             label: "Chats", icon: Icon(CupertinoIcons.chat_bubble_2_fill)),
         BottomNavigationBarItem(
-            label: "Calls", icon: Icon(CupertinoIcons.phone)),
+            label: "Appointments", icon: Icon(CupertinoIcons.ap)),
         BottomNavigationBarItem(
-            label: "People", icon: Icon(CupertinoIcons.person_alt_circle)),
+            label: "Profile", icon: Icon(CupertinoIcons.person_alt_circle)),
         BottomNavigationBarItem(
             label: "Settings", icon: Icon(CupertinoIcons.settings_solid)),
       ]),
