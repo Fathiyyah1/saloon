@@ -46,10 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return CupertinoPageScaffold(
         child: CupertinoTabScaffold(
       tabBar: CupertinoTabBar(items: const [
+        BottomNavigationBarItem(label: "Home", icon: Icon(CupertinoIcons.home)),
         BottomNavigationBarItem(
-            label: "Chats", icon: Icon(CupertinoIcons.chat_bubble_2_fill)),
-        BottomNavigationBarItem(
-            label: "Appointments", icon: Icon(CupertinoIcons.ap)),
+            label: "Appointments", icon: Icon(CupertinoIcons.calendar_today)),
         BottomNavigationBarItem(
             label: "Profile", icon: Icon(CupertinoIcons.person_alt_circle)),
         BottomNavigationBarItem(
