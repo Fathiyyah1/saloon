@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class homepage extends StatelessWidget {
@@ -5,6 +6,12 @@ class homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CustomScrollView(
+      slivers: [
+        const CupertinoSliverNavigationBar(
+          largeTitle: Text("Welcome Fatheya"),
+        )
+      ],
+    );
   }
 }
