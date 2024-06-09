@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:saloon/global.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,16 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Saloon App',
+    return CupertinoApp(
+      title: 'Chat App',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: CupertinoThemeData(
+        brightness: Brightness.light,
+        primaryColor: AppColors.primary,
       ),
-      home: Container(
-        color: Colors.white,
-      ),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
