@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/global.dart';
-import 'package:saloon/homepage.dart';
+import 'package:saloon/screens/homepage.dart';
 
 void main() {
   runApp(const MyApp());

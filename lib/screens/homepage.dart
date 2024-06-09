@@ -8,7 +8,7 @@ class homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const CupertinoSliverNavigationBar(
+        CupertinoSliverNavigationBar(
           largeTitle: Text("Welcome Fatheya"),
         )
       ],
