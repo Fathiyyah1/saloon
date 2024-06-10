@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +46,7 @@ class UserCubit extends Cubit<UserStates> {
       final firebaseUser = _credential.user;
       if (firebaseUser != null) {
         bool isPremium = false;
-        List<Progress> progress = [];
+        // List<Progress> progress = [];
         var userData = await getUserData(firebaseUser.uid);
         if (userData != null && userData['isPremium'] != null) {
           isPremium = userData['isPremium'];
