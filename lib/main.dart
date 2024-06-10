@@ -5,8 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:saloon/cubit/user_cubit.dart';
 import 'package:saloon/firebase_options.dart';
 import 'package:saloon/screens/public/splash.dart';
-import 'package:saloon/screens/utils/global.dart';
-import 'package:saloon/screens/freemium/homepage.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
