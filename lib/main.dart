@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:saloon/cubit/app_cubit.dart';
-import 'package:saloon/global.dart';
+import 'package:saloon/screens/utils/global.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: CupertinoThemeData(
           brightness: Brightness.light,
-          primaryColor: AppColors.primary,
+          primaryColor: AppColors.mainColor,
         ),
         home: Homepage(),
       ),
