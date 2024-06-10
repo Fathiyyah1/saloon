@@ -4,7 +4,6 @@ import 'package:saloon/cubit/user_cubit.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
 import 'package:saloon/screens/public/splash.dart';
 import 'screens/components/loading_indicator.dart';
-import 'screens/sign-in/SignIn.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
