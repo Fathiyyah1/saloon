@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/firebase_options.dart';
-import 'package:saloon/screens/homepage.dart';
+import 'package:saloon/screens/freemium/homepage.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({super.key});

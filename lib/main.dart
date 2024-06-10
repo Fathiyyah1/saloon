@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:saloon/cubit/app_cubit.dart';
 import 'package:saloon/global.dart';
-import 'package:saloon/screens/homepage.dart';
+import 'package:saloon/screens/freemium/homepage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
