@@ -6,6 +6,7 @@ import 'package:saloon/apis/get_api.dart';
 import 'package:saloon/cubit/user_states.dart';
 import 'package:saloon/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../apis/create_api.dart';
 
 class UserCubit extends Cubit<UserStates> {
   UserCubit() : super(UserInitState());
@@ -19,10 +20,10 @@ class UserCubit extends Cubit<UserStates> {
   Future<User?> getSavedUser() async {
     try {
       var prefs = await SharedPreferences.getInstance();
-      String? progressString = prefs.getString("progress");
-      List progress = jsonDecode(progressString ?? "");
-      print(progressString);
-      print(progress);
+      // String? progressString = prefs.getString("progress");
+      // List progress = jsonDecode(progressString ?? "");
+      // print(progressString);
+      // print(progress);
       loggedUser = User(
         id: prefs.getString('id')!,
         email: prefs.getString('email')!,
@@ -63,7 +64,7 @@ class UserCubit extends Cubit<UserStates> {
           email: firebaseUser.email!,
           name: firebaseUser.displayName!,
           isPremium: isPremium,
-          progress: progress,
+          // progress: progress,
         );
         var prefs = await SharedPreferences.getInstance();
         prefs.setBool("isLoggedIn", true);
