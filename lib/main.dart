@@ -6,7 +6,7 @@ import 'package:saloon/global.dart';
 import 'package:saloon/screens/Appointment.dart';
 import 'package:saloon/screens/Profile.dart';
 import 'package:saloon/screens/Settings.dart';
-import 'package:saloon/screens/homepage.dart';
+import 'package:saloon/screens/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
