@@ -1,7 +1,11 @@
+import 'dart:convert';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:saloon/cubit/app_states.dart';
+import 'package:saloon/cubit/user_states.dart';
 import 'package:saloon/models/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserCubit extends Cubit<UserStates> {
   UserCubit() : super(UserInitState());
@@ -12,16 +16,28 @@ class UserCubit extends Cubit<UserStates> {
     loggedUser = await getSavedUser();
   }
 
-
   Future<User?> getSavedUser() async {
     try {
       var prefs = await SharedPreferences.getInstance();
+      String? progressString = prefs.getString("progress");
+      List progress = jsonDecode(progressString ?? "");
+      print(progressString);
+      print(progress);
       loggedUser = User(
         id: prefs.getString('id')!,
-       username: username, name: name, email: email, income: income, passcode: passcode, wallets: wallets)
+        email: prefs.getString('email')!,
+        name: prefs.getString('name')!,
+        isPremium: prefs.getBool('isPremium')!,
+        progress: progressString != null && progressString != "()"
+            ? progress.map((e) => Progress.fromJson(e)).toList()
+            : [],
+      );
+      emit(TriggerUser());
+      return loggedUser;
+    } catch (e) {
+      print("Error in getSavedUser $e");
     }
   }
-
 
   Future<dynamic> loginUser(String email, String pass) async {
     final _auth = auth.FirebaseAuth.instance;
@@ -100,8 +116,7 @@ class UserCubit extends Cubit<UserStates> {
     }
   }
 
-
-    Future logOut() async {
+  Future logOut() async {
     var prefs = await SharedPreferences.getInstance();
     prefs.setBool("isLoggedIn", false);
     await prefs.clear();
@@ -113,5 +128,4 @@ class UserCubit extends Cubit<UserStates> {
     prefs.setBool("isPremium", isPremium);
     emit(TriggerUser());
   }
-
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:saloon/cubit/app_cubit.dart';
+import 'package:saloon/cubit/user_cubit.dart';
 import 'package:saloon/screens/utils/global.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
 
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AppCubit>(
-      create: (context) => AppCubit(),
+    return BlocProvider<UserCubit>(
+      create: (context) => UserCubit(),
       child: CupertinoApp(
         title: 'Chat App',
         debugShowCheckedModeBanner: false,
