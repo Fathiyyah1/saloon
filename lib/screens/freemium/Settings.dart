@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saloon/cubit/app_cubit.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:saloon/cubit/user_cubit.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class Settings extends StatefulWidget {
@@ -14,6 +15,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     bool isPremium = UserCubit.get(context).loggedUser!.isPremium;
+
     return CustomScrollView(
       slivers: [
         CupertinoSliverNavigationBar(
@@ -22,7 +24,15 @@ class _SettingsState extends State<Settings> {
         SettingsList(sections: [
           SettingsSection(
             title: Text("Account"),
-            tiles: [SettingsTile.navigation(title: Text())],
+            tiles: [
+              SettingsTile.navigation(
+                  leading: SvgPicture.asset(
+                    'assets/icons/crown.svg',
+                    width: 20,
+                    height: 20,
+                  ),
+                  title: Text(""))
+            ],
           )
         ])
       ],

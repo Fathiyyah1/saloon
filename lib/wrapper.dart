@@ -1,42 +1,36 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saloon/firebase_options.dart';
+import 'package:saloon/cubit/user_cubit.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
+import 'screens/components/loading_indicator.dart';
+import 'screens/sign-in/SignIn.dart';
 
-class Wrapper extends StatefulWidget {
+class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
 
   @override
-  State<Wrapper> createState() => _WrapperState();
-}
-
-class _WrapperState extends State<Wrapper> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
   Widget build(BuildContext context) {
+    UserCubit userCubit = UserCubit.get(context);
+    Future<bool> checkLoggedUser() async {
+      await userCubit.getSavedUser();
+      if (userCubit.loggedUser != null) return true;
+      return false;
+    }
+
     return Scaffold(
-      backgroundColor: Colors.white,
       body: FutureBuilder(
-          future: initApp(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => Homepage()));
-            }
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }),
+        future: checkLoggedUser(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
+            return const MyCircularProgressIndicator();
+          }
+          if (snapshot.data != false) {
+            return Homepage();
+          } else {
+            return SignIn();
+          }
+        },
+      ),
     );
   }
-}
-
-Future initApp() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
 }
