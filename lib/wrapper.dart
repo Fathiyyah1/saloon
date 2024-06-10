@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/firebase_options.dart';
-import 'package:saloon/screens/home.dart';
+import 'package:saloon/screens/homepage.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({super.key});
@@ -25,7 +25,7 @@ class _WrapperState extends State<Wrapper> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => homepage()));
+                  context, MaterialPageRoute(builder: (context) => Homepage()));
             }
             return Center(
               child: CircularProgressIndicator(),
