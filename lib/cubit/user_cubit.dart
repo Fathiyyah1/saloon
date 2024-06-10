@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:saloon/apis/get_api.dart';
 import 'package:saloon/cubit/user_states.dart';
 import 'package:saloon/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,9 +28,9 @@ class UserCubit extends Cubit<UserStates> {
         email: prefs.getString('email')!,
         name: prefs.getString('name')!,
         isPremium: prefs.getBool('isPremium')!,
-        progress: progressString != null && progressString != "()"
-            ? progress.map((e) => Progress.fromJson(e)).toList()
-            : [],
+        // progress: progressString != null && progressString != "()"
+        //     ? progress.map((e) => Progress.fromJson(e)).toList()
+        //     : [],
       );
       emit(TriggerUser());
       return loggedUser;
@@ -50,9 +51,9 @@ class UserCubit extends Cubit<UserStates> {
         var userData = await getUserData(firebaseUser.uid);
         if (userData != null && userData['isPremium'] != null) {
           isPremium = userData['isPremium'];
-          progress = (userData['progress'] as List)
-              .map((e) => Progress.fromJson(e))
-              .toList();
+          // progress = (userData['progress'] as List)
+          //     .map((e) => Progress.fromJson(e))
+          //     .toList();
         } else {
           // Set isPremium to false in firebase
           await createUserData(firebaseUser.uid, false);
