@@ -1,5 +1,5 @@
-abstract class AppStates {}
+abstract class UserStates {}
 
-class AppInitState extends AppStates {}
+class UserInitState extends UserStates {}
 
-class TriggerApp extends AppStates {}
+class TriggerUser extends UserStates {}
