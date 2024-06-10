@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   firebase_database: ^10.1.2
   intl: ^0.18.1
+  settings_ui: ^2.0.2
 
 
 dev_dependencies:
