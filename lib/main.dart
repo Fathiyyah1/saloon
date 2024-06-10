@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
         title: 'Chat App',
         debugShowCheckedModeBanner: false,
         theme: CupertinoThemeData(
-          brightness: Brightness.light,
-          primaryColor: AppColors.Dark,
-        ),
+            // brightness: Brightness.light,
+            // primaryColor: AppColors.Dark,
+            ),
         home: Homepage(),
       ),
     );
