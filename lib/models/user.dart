@@ -5,7 +5,6 @@ class User {
   String id;
   String name;
   bool isPremium;
-  double income;
   String passcode;
   String email;
   List<Wallet> wallets;
@@ -14,7 +13,6 @@ class User {
     required this.username,
     required this.name,
     required this.email,
-    required this.income,
     required this.passcode,
     required this.isPremium,
     required this.wallets,
