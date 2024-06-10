@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: CupertinoThemeData(
           brightness: Brightness.light,
-          primaryColor: AppColors.mainColor,
+          primaryColor: AppColors.Dark,
         ),
         home: Homepage(),
       ),
