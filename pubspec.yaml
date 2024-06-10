@@ -41,7 +41,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   firebase_database: ^10.1.2
   intl: ^0.18.1
-  flutter-floating-bottom-bar: ^1.2.0
+
 
 dev_dependencies:
   flutter_test:
