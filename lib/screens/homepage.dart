@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:saloon/screens/Appointment.dart';
 import 'package:saloon/screens/Profile.dart';
 import 'package:saloon/screens/Settings.dart';
-import 'package:saloon/screens/home.dart';
+import 'package:saloon/screens/public/home.dart';
 
 var screens = [homepage(), Appointment(), Profile(), Settings()];
 
