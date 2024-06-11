@@ -64,7 +64,7 @@ class UserCubit extends Cubit<UserStates> {
           id: firebaseUser.uid,
           email: firebaseUser.email!,
           name: firebaseUser.displayName!,
-          
+
           isPremium: isPremium,
           // progress: progress,
         );
