@@ -3,10 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:saloon/apis/get_api.dart';
-import 'package:saloon/cubit/user_states.dart';
+import 'package:saloon/bloc/states/user_states.dart';
 import 'package:saloon/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../apis/create_api.dart';
+import '../../apis/create_api.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 class UserCubit extends Cubit<UserStates> {
