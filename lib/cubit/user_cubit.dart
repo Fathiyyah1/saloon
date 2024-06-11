@@ -28,6 +28,7 @@ class UserCubit extends Cubit<UserStates> {
         id: prefs.getString('id')!,
         email: prefs.getString('email')!,
         name: prefs.getString('name')!,
+        username: prefs.getString('username')!,
         isPremium: prefs.getBool('isPremium')!,
         // progress: progressString != null && progressString != "()"
         //     ? progress.map((e) => Progress.fromJson(e)).toList()
@@ -63,6 +64,7 @@ class UserCubit extends Cubit<UserStates> {
           id: firebaseUser.uid,
           email: firebaseUser.email!,
           name: firebaseUser.displayName!,
+          
           isPremium: isPremium,
           // progress: progress,
         );
