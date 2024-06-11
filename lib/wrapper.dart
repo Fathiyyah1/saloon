@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saloon/cubit/user_cubit.dart';
+import 'package:saloon/bloc/cubits/user_cubit.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
 import 'package:saloon/screens/public/splash.dart';
 import 'screens/components/loading_indicator.dart';

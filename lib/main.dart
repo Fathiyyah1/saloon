@@ -2,9 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:saloon/cubit/user_cubit.dart';
+import 'package:saloon/bloc/cubits/user_cubit.dart';
 import 'package:saloon/firebase_options.dart';
 import 'package:saloon/screens/public/splash.dart';
+import 'package:saloon/screens/sign-in/SignIn.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             // brightness: Brightness.light,
             // primaryColor: AppColors.Dark,
             ),
-        home: const SplashScreen(),
+        home: SignIn(),
       ),
     );
   }

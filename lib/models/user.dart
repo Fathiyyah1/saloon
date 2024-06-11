@@ -14,7 +14,7 @@ class User {
     required this.name,
     required this.email,
     required this.passcode,
-    required this.isPremium,
+    this.isPremium = false,
     required this.wallets,
   });
 }

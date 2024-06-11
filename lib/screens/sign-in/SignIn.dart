@@ -2,7 +2,7 @@ import 'dart:js_interop';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:saloon/cubit/user_cubit.dart';
+import 'package:saloon/bloc/cubits/user_cubit.dart';
 import 'package:saloon/models/user.dart';
 import 'package:saloon/screens/freemium/homepage.dart';
 import 'package:saloon/screens/sign-up/SignUp.dart';
